@@ -1,0 +1,13 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix lotr: <http://example.org/lotr/> .
+
+lotr:gimli a foaf:Person ;
+    foaf:name "Gimli" ;
+    foaf:givenName "Gimli" ;
+    foaf:familyName "Son of Glóin" ;
+    foaf:title "Lord of the Glittering Caves" ;
+    foaf:gender "male" ;
+    foaf:based_near "Middle-earth" ;
+    foaf:interest "Axes", "Mithril" ;
+    foaf:knows lotr:legolas , lotr:aragorn .
+

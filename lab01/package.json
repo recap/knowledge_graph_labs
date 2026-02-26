@@ -1,0 +1,17 @@
+{
+  "name": "lab_1",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "jsonld": "^9.0.0",
+    "n3": "^2.0.1",
+    "rdf-stores": "^2.1.1"
+  }
+}
