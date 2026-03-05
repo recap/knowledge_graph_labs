@@ -1,4 +1,4 @@
-@prefix lotr: <https://recap.github.io/lotr-vocab/> .
+@prefix lotr: <https://recap.github.io/vocab/> .
 
 lotr:gimli a lotr:Dwarf ;
     lotr:name "Gimli" ;

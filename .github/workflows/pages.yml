@@ -1,0 +1,83 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install rdflib for TTL validation
+        run: pip install rdflib
+
+      - name: Validate TTL vocabularies
+        run: |
+          python - <<'EOF'
+          import sys
+          from pathlib import Path
+          from rdflib import Graph
+
+          errors = []
+          for ttl in sorted(Path("vocab").glob("*.ttl")):
+              g = Graph()
+              try:
+                  g.parse(ttl, format="turtle")
+                  print(f"  OK  {ttl}  ({len(g)} triples)")
+              except Exception as exc:
+                  errors.append(f"  FAIL {ttl}: {exc}")
+
+          if errors:
+              print("\nValidation errors:")
+              for e in errors:
+                  print(e)
+              sys.exit(1)
+          else:
+              print("\nAll vocabularies are valid.")
+          EOF
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          # Copy static HTML/CSS assets from docs/
+          cp -r docs/. _site/
+          # Serve vocabulary files under vocab/ so relative links work
+          cp -r vocab/ _site/vocab/
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
