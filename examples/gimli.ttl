@@ -9,7 +9,7 @@ lotr:gimli a lotr:Dwarf ;
     lotr:hasInterest "Axes", "Mithril" .
 
 lotr:gloin a lotr:Dwarf ;
-    scehma:name "Glóin" .
+    schema:name "Glóin" .
 
 lotr:middle_earth a lotr:Place ;
     schema:name "Middle-earth" .
