@@ -63,7 +63,7 @@ jobs:
           # Serve vocabulary files under vocab/ so relative links work
           cp -r vocab/ _site/vocab/
 
-          cp -r examples/ _site/
+          cp  examples/*.ttl _site/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
