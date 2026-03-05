@@ -1,0 +1,14 @@
+@prefix lotr: <https://recap.github.io/lotr-vocab/> .
+
+lotr:gimli a lotr:Dwarf ;
+    lotr:name "Gimli" ;
+    lotr:sonOf lotr:gloin ;
+    lotr:hasTitle "Lord of the Glittering Caves" ;
+    lotr:livesIn lotr:middle_earth ;
+    lotr:hasInterest "Axes", "Mithril" .
+
+lotr:gloin a lotr:Dwarf ;
+    lotr:name "Glóin" .
+
+lotr:middle_earth a lotr:Place ;
+    lotr:name "Middle-earth" .
