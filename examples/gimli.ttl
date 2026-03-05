@@ -1,14 +1,15 @@
-@prefix lotr: <https://recap.github.io/vocab/> .
+@prefix lotr: <https://recap.github.io/knowledge_graph_labs/vocab/> .
+@prefix schema: <https://schema.org/> .
 
 lotr:gimli a lotr:Dwarf ;
-    lotr:name "Gimli" ;
+    schema:name "Gimli" ;
     lotr:sonOf lotr:gloin ;
     lotr:hasTitle "Lord of the Glittering Caves" ;
     lotr:livesIn lotr:middle_earth ;
     lotr:hasInterest "Axes", "Mithril" .
 
 lotr:gloin a lotr:Dwarf ;
-    lotr:name "Glóin" .
+    scehma:name "Glóin" .
 
 lotr:middle_earth a lotr:Place ;
-    lotr:name "Middle-earth" .
+    schema:name "Middle-earth" .

@@ -1,32 +1,58 @@
-@prefix lotr: <https://recap.github.io/lotr-vocab/> .
+@prefix lotr: <https://recap.github.io/knowledge_graph_labs/vocab/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
+### Classes
+
 lotr:Character a rdfs:Class ;
-    rdfs:label "Character" .
+    rdfs:label "Character" ;
+    rdfs:comment "A character appearing in the Lord of the Rings universe." .
 
 lotr:Dwarf a rdfs:Class ;
-    rdfs:subClassOf lotr:Character .
+    rdfs:subClassOf lotr:Character ;
+    rdfs:label "Dwarf" .
 
 lotr:Elf a rdfs:Class ;
-    rdfs:subClassOf lotr:Character .
+    rdfs:subClassOf lotr:Character ;
+    rdfs:label "Elf" .
 
 lotr:Man a rdfs:Class ;
-    rdfs:subClassOf lotr:Character .
+    rdfs:subClassOf lotr:Character ;
+    rdfs:label "Man" .
 
 lotr:Hobbit a rdfs:Class ;
-    rdfs:subClassOf lotr:Character .
+    rdfs:subClassOf lotr:Character ;
+    rdfs:label "Hobbit" .
 
 lotr:Orc a rdfs:Class ;
-    rdfs:subClassOf lotr:Character .
+    rdfs:subClassOf lotr:Character ;
+    rdfs:label "Orc" .
 
 lotr:Wizard a rdfs:Class ;
-    rdfs:subClassOf lotr:Character .
+    rdfs:subClassOf lotr:Character ;
+    rdfs:label "Wizard" .
 
-lotr:Place a rdfs:Class .
+lotr:Place a rdfs:Class ;
+    rdfs:label "Place in Middle-earth" .
 
-lotr:name a rdf:Property .
-lotr:hasTitle a rdf:Property .
-lotr:hasInterest a rdf:Property .
-lotr:livesIn a rdf:Property .
-lotr:sonOf a rdf:Property .
+### Properties
+
+lotr:hasTitle a rdf:Property ;
+    rdfs:label "has title" ;
+    rdfs:domain lotr:Character ;
+    rdfs:range rdfs:Literal .
+
+lotr:hasInterest a rdf:Property ;
+    rdfs:label "has interest" ;
+    rdfs:domain lotr:Character ;
+    rdfs:range rdfs:Literal .
+
+lotr:livesIn a rdf:Property ;
+    rdfs:label "lives in" ;
+    rdfs:domain lotr:Character ;
+    rdfs:range lotr:Place .
+
+lotr:sonOf a rdf:Property ;
+    rdfs:label "son of" ;
+    rdfs:domain lotr:Character ;
+    rdfs:range lotr:Character .
