@@ -1,68 +1,78 @@
-@prefix lotr: <https://recap.github.io/knowledge_graph_labs/vocab/lotr.ttl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix lotr:   <https://recap.github.io/knowledge_graph_labs/vocab/lotr.ttl#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix foaf:   <http://xmlns.com/foaf/0.1/> .
 @prefix schema: <http://schema.org/> .
 
-### Class alignments
-
-lotr:Character rdfs:subClassOf foaf:Person, schema:Person .
-lotr:livesIn rdfs:subPropertyOf schema:homeLocation .
-lotr:sonOf   rdfs:subPropertyOf schema:parent .
-lotr:hasTitle rdfs:subPropertyOf schema:honorificSuffix .
-lotr:hasInterest rdfs:subPropertyOf foaf:interest .
-
 ### Classes
 
-lotr:Character a rdfs:Class ;
+lotr:Character
+    a rdfs:Class ;
+    rdfs:subClassOf foaf:Person, schema:Person ;
     rdfs:label "Character" ;
     rdfs:comment "A character appearing in the Lord of the Rings universe." .
 
-lotr:Dwarf a rdfs:Class ;
+lotr:Dwarf
+    a rdfs:Class ;
     rdfs:subClassOf lotr:Character ;
     rdfs:label "Dwarf" .
 
-lotr:Elf a rdfs:Class ;
+lotr:Elf
+    a rdfs:Class ;
     rdfs:subClassOf lotr:Character ;
     rdfs:label "Elf" .
 
-lotr:Man a rdfs:Class ;
+lotr:Man
+    a rdfs:Class ;
     rdfs:subClassOf lotr:Character ;
     rdfs:label "Man" .
 
-lotr:Hobbit a rdfs:Class ;
+lotr:Hobbit
+    a rdfs:Class ;
     rdfs:subClassOf lotr:Character ;
     rdfs:label "Hobbit" .
 
-lotr:Orc a rdfs:Class ;
+lotr:Orc
+    a rdfs:Class ;
     rdfs:subClassOf lotr:Character ;
     rdfs:label "Orc" .
 
-lotr:Wizard a rdfs:Class ;
+lotr:Wizard
+    a rdfs:Class ;
     rdfs:subClassOf lotr:Character ;
     rdfs:label "Wizard" .
 
-lotr:Place a rdfs:Class ;
+lotr:Place
+    a rdfs:Class ;
+    rdfs:subClassOf schema:Place ;
     rdfs:label "Place in Middle-earth" .
 
 ### Properties
 
-lotr:hasTitle a rdf:Property ;
+lotr:hasTitle
+    a rdf:Property ;
     rdfs:label "has title" ;
     rdfs:domain lotr:Character ;
-    rdfs:range rdfs:Literal .
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf schema:honorificSuffix .
 
-lotr:hasInterest a rdf:Property ;
+lotr:hasInterest
+    a rdf:Property ;
     rdfs:label "has interest" ;
     rdfs:domain lotr:Character ;
-    rdfs:range rdfs:Literal .
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf foaf:interest .
 
-lotr:livesIn a rdf:Property ;
+lotr:livesIn
+    a rdf:Property ;
     rdfs:label "lives in" ;
     rdfs:domain lotr:Character ;
-    rdfs:range lotr:Place .
+    rdfs:range lotr:Place ;
+    rdfs:subPropertyOf schema:homeLocation .
 
-lotr:sonOf a rdf:Property ;
+lotr:sonOf
+    a rdf:Property ;
     rdfs:label "son of" ;
     rdfs:domain lotr:Character ;
-    rdfs:range lotr:Character .
+    rdfs:range lotr:Character ;
+    rdfs:subPropertyOf schema:parent .
