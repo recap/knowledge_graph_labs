@@ -1,5 +1,5 @@
 @prefix lotr: <https://recap.github.io/knowledge_graph_labs/vocab/lotr.ttl#> .
-@prefix schema: <https://schema.org/> .
+@prefix schema: <http://schema.org/> .
 
 lotr:gimli a lotr:Dwarf ;
     schema:name "Gimli" ;
