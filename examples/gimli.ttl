@@ -1,15 +1,88 @@
 @prefix lotr: <https://recap.github.io/knowledge_graph_labs/vocab/lotr.ttl#> .
 @prefix schema: <http://schema.org/> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+
+<https://static0.srcdn.com/wordpress/wp-content/uploads/2023/07/the-fellowship-in-the-lord-of-the-rings-movies.jpg> a foaf:Image ;
+    schema:name "The Fellowship of the Ring" ;
+    schema:description "The nine members of the Fellowship of the Ring in the Lord of the Rings movies." ;
+    schema:creator "New Line Cinema" ;
+    schema:contentLocation lotr:rivendell ;
+    foaf:depicts lotr:gimli, lotr:aragorn, lotr:legolas, lotr:gandalf, lotr:boromir, lotr:frodo, lotr:samwise, lotr:merry, lotr:pippin .
+
+<https://static0.srcdn.com/wordpress/wp-content/uploads/2023/09/lord-of-the-rings-frodo-gandalf.jpeg> a foaf:Image ;
+    schema:name "Gandalf and Frodo" ;
+    schema:description "Gandalf and Frodo Baggins riding into The Shire in the Lord of the Rings movies." ;
+    schema:creator "New Line Cinema" ;
+    schema:contentLocation lotr:the_shire ;
+    foaf:depicts lotr:gandalf, lotr:frodo .
+
+<https://static0.srcdn.com/wordpress/wp-content/uploads/2017/03/Gimli-pipe-Lord-of-the-Rings.jpg> a foaf:Image ;
+    schema:name "Gimli Smoking a Pipe" ;
+    schema:description "Gimli smoking a pipe in the Lord of the Rings movies." ;
+    schema:creator "New Line Cinema" ;
+    schema:contentLocation lotr:rivendell ;
+    foaf:depicts lotr:gimli .
 
 lotr:gimli a lotr:Dwarf ;
     schema:name "Gimli" ;
+    foaf:depiction <https://static0.srcdn.com/wordpress/wp-content/uploads/2017/03/Gimli-pipe-Lord-of-the-Rings.jpg> ;
     lotr:sonOf lotr:gloin ;
     lotr:hasTitle "Lord of the Glittering Caves" ;
     lotr:livesIn lotr:middle_earth ;
     lotr:hasInterest "Axes", "Mithril" .
+    foaf:knows
+        lotr:aragorn,
+        lotr:legolas,
+        lotr:gandalf,
+        lotr:boromir,
+        lotr:frodo,
+        lotr:samwise,
+        lotr:merry,
+        lotr:pippin .
 
 lotr:gloin a lotr:Dwarf ;
     schema:name "Glóin" .
 
 lotr:middle_earth a lotr:Place ;
     schema:name "Middle-earth" .
+
+lotr:the_shire a lotr:Place ;
+    schema:name "The Shire" .
+
+lotr:rivendell a lotr:Place ;
+    schema:name "Rivendell" .
+
+lotr:aragorn a lotr:Man ;
+    schema:name "Aragorn" ;
+    lotr:hasTitle "King of Gondor" ;
+    lotr:livesIn lotr:middle_earth .
+
+lotr:legolas a lotr:Elf ;
+    schema:name "Legolas" ;
+    lotr:livesIn lotr:middle_earth ;
+    lotr:hasInterest "Archery" .
+
+lotr:gandalf a lotr:Wizard ;
+    schema:name "Gandalf" ;
+    lotr:hasTitle "The Grey" ;
+    lotr:livesIn lotr:middle_earth .
+
+lotr:boromir a lotr:Man ;
+    schema:name "Boromir" ;
+    lotr:livesIn lotr:middle_earth .
+
+lotr:frodo a lotr:Hobbit ;
+    schema:name "Frodo Baggins" ;
+    lotr:livesIn lotr:middle_earth .
+
+lotr:samwise a lotr:Hobbit ;
+    schema:name "Samwise Gamgee" ;
+    lotr:livesIn lotr:middle_earth .
+
+lotr:merry a lotr:Hobbit ;
+    schema:name "Meriadoc Brandybuck" ;
+    lotr:livesIn lotr:middle_earth .
+
+lotr:pippin a lotr:Hobbit ;
+    schema:name "Peregrin Took" ;
+    lotr:livesIn lotr:middle_earth .
