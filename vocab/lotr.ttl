@@ -8,7 +8,7 @@
 
 lotr:Character
     a rdfs:Class ;
-    rdfs:subClassOf foaf:Person, schema:Person ;
+    rdfs:subClassOf foaf:Person ;
     rdfs:label "Character" ;
     rdfs:comment "A character appearing in the Lord of the Rings universe." .
 
