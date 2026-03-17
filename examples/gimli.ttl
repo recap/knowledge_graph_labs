@@ -29,7 +29,7 @@ lotr:gimli a lotr:Dwarf ;
     lotr:sonOf lotr:gloin ;
     lotr:hasTitle "Lord of the Glittering Caves" ;
     lotr:livesIn lotr:middle_earth ;
-    lotr:hasInterest "Axes", "Mithril" .
+    lotr:hasInterest "Axes", "Mithril" ;
     foaf:knows
         lotr:aragorn,
         lotr:legolas,
